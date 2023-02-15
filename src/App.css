@@ -35,6 +35,7 @@
 .App_main-battery {
   display: flex;
   grid-column-start: 3;
+  height: fit-content;
   margin: 20px;
   padding: 16px;
 }
@@ -42,6 +43,7 @@
 .App_main-plasma {
   display: flex;
   grid-column-start: 1;
+  height: fit-content;
   margin: 20px;
   padding: 16px;
 }
@@ -49,6 +51,7 @@
 .App_main-repair {
   display: flex;
   grid-column-start: 3;
+  height: fit-content;
   margin: 20px;
   padding: 16px;
 }
@@ -56,10 +59,10 @@
 .panel-border {
   border-image-source: url('../public/images/panel-type.png');
   border-image-slice: 10 fill;
-  border-image-width: 10px;
+  border-image-width: 18px;
   border-image-outset: 0;
   border-image-repeat: stretch;
   border-style: solid;
   border-color: transparent;
-  backdrop-filter: blur(4px)
+  backdrop-filter: blur(6px)
 }

@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'panel': "#176F7F",
+        'overlay-gray': 'rgba(13, 12, 12, 0.8)',
+      },
+    },
   },
   plugins: [],
 }
