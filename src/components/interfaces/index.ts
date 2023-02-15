@@ -4,6 +4,7 @@ export interface ITeamStroke {
     location: string,
     busy: boolean,
     openModal?: (arg:any) => void,
+    setSelectedTeam: (arg: any) => void,
     className?: string,
 }
 
@@ -15,4 +16,14 @@ export interface IModal {
     customClasses?: boolean;
     children: any;
     onSideClick?: () => void;
+}
+
+export interface IRepair {
+    openModal?: (arg:any) => void,
+    setSelectedTeam: (arg: any) => void,
+}
+
+export interface ISendTeamModal {
+    sendTeamModal: any;
+    nameTeam: string;
 }

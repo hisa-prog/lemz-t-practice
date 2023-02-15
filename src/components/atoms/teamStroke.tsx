@@ -1,6 +1,6 @@
 import { ITeamStroke } from "../interfaces";
 
-const TeamStroke = ({index, name, location, busy, className}: ITeamStroke) => {
+const TeamStroke = ({index, name, location, busy, className, openModal, setSelectedTeam}: ITeamStroke) => {
   return (
     <div key={index} className={`flex justify-between items-center mt-4 py-2 ${className}`}>
       <p className="text-white text-2xl">{name}</p>
@@ -13,10 +13,14 @@ const TeamStroke = ({index, name, location, busy, className}: ITeamStroke) => {
         {busy ? "Busy" : "Free"}
       </p>
       <button 
-        className="flex justify-center items-center p-2 text-white border-2 border-panel rounded-lg cursor-pointer"
-        onClick={() => {}}
+        className="flex justify-center items-center p-2 text-white border-2 border-panel rounded-lg cursor-pointer hover:opacity-50"
+        onClick={busy ? () => {}  : openModal}
+        // onClick={busy 
+        //   ? () => {}  
+        //   : () => {setSelectedTeam(name), openModal}
+        // }
       >
-        {busy ? "Repair" : "Revoke"}
+        {busy ? "Revoke" : "Repair"}
       </button>
     </div>
   );
