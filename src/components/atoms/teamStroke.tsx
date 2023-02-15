@@ -1,11 +1,4 @@
-interface ITeamStroke {
-    index: number,
-    name: string,
-    location: string,
-    busy: boolean,
-    openModal?: (arg:any) => void,
-    className?: string,
-}
+import { ITeamStroke } from "../interfaces";
 
 const TeamStroke = ({index, name, location, busy, className}: ITeamStroke) => {
   return (
