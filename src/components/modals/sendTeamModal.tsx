@@ -32,8 +32,8 @@ const SendTeamModal = ({
                 </div>
                 <div className="flex justify-center w-full">
                     <button 
-                    className={`${selectedLocation === -1 && 'opacity-20'}
-                    w-max py-2 px-6 rounded-xl text-xl text-white border-2 border-white cursor-pointer hover:opacity-50`}
+                    className={`${selectedLocation === -1 ? 'opacity-20' : 'cursor-pointer hover:opacity-50 active:opacity-50'}
+                    w-max py-2 px-6 rounded-xl text-xl text-white border-2 border-white`}
                     disabled={selectedLocation === -1}
                     onClick={() => {}}>
                         Send
