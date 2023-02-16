@@ -27,3 +27,11 @@ export interface ISendTeamModal {
     sendTeamModal: any;
     nameTeam: string;
 }
+
+export interface IPlasmaStatStroke {
+    name: string,
+    value: number,
+    color: string,
+    procent?: boolean,
+    className?: string,
+}
