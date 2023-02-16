@@ -9,7 +9,7 @@
   background-image: url('../public/images/bg.jpeg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 75%;
+  background-size: 80%;
 }
 
 .App__porthole {
@@ -20,7 +20,7 @@
   background-image: url('../public/images/bgPorthole.png');
   background-repeat: no-repeat;
   background-size: cover;
-  scale: 1.10;
+  scale: 1.15;
 }
 
 .App__main {
