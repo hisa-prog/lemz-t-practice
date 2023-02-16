@@ -33,3 +33,15 @@ code {
     monospace;
 }
 
+.blinkAnimation {
+  animation-name: blink;
+  animation-timing-function: linear;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
