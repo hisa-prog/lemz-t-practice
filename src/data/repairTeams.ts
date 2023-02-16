@@ -316,14 +316,3 @@ export const repairTeamsAPI = {
     ],
   },
 };
-
-// <{
-// is_busy: boolean,
-// current_location : string,
-//   employees : Array<{
-//     name : string,
-//     grade : string,
-//     is_weak : boolean,
-//     is_busy : boolean
-//   }>
-// }>

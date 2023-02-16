@@ -15,10 +15,6 @@ const TeamStroke = ({index, name, location, busy, className, openModal, setSelec
       <button 
         className="flex justify-center items-center p-2 text-white border-2 border-panel rounded-lg cursor-pointer hover:opacity-50"
         onClick={busy ? () => {}  : openModal}
-        // onClick={busy 
-        //   ? () => {}  
-        //   : () => {setSelectedTeam(name), openModal}
-        // }
       >
         {busy ? "Revoke" : "Repair"}
       </button>

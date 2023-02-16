@@ -10,9 +10,6 @@ function App() {
   const sendTeamModal = useModal();
   const [selectedTeam, setSelectedTeam] = useState('')
 
-  // useEffect(() => {
-  //   console.log(selectedTeam)
-  // },[selectedTeam])
   return (
     <div className="App">
       <SendTeamModal sendTeamModal={sendTeamModal} nameTeam={selectedTeam} />
