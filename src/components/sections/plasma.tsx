@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PlasmaStatStroke from "../atoms/plasmaStatStroke";
+import PlasmaStatStroke from "../atoms/plasmaStatString";
 import { DangerIcon } from "../icons/dangerIcon";
 
 const data = {

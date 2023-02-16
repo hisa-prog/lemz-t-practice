@@ -1,4 +1,4 @@
-export interface ITeamStroke {
+export interface ITeamString {
     index: number,
     name: string,
     location: string,
@@ -28,7 +28,7 @@ export interface ISendTeamModal {
     nameTeam: string;
 }
 
-export interface IPlasmaStatStroke {
+export interface IPlasmaStatString {
     name: string,
     value: number,
     color: string,

@@ -1,12 +1,12 @@
-import { IPlasmaStatStroke } from "../interfaces";
+import { IPlasmaStatString } from "../interfaces";
 
-const PlasmaStatStroke = ({
+const PlasmaStatString = ({
   name,
   value,
   color,
   procent = false,
   className,
-}: IPlasmaStatStroke) => {
+}: IPlasmaStatString) => {
   return (
     <div className={`flex justify-between items-center ${className}`}>
       <p className="text-white text-2xl">{name}</p>
@@ -18,4 +18,4 @@ const PlasmaStatStroke = ({
   );
 };
 
-export default PlasmaStatStroke;
+export default PlasmaStatString;

@@ -1,6 +1,6 @@
-import { ITeamStroke } from "../interfaces";
+import { ITeamString } from "../interfaces";
 
-const TeamStroke = ({index, name, location, busy, className, openModal, setSelectedTeam}: ITeamStroke) => {
+const TeamString = ({index, name, location, busy, className, openModal, setSelectedTeam}: ITeamString) => {
   return (
     <div key={index} className={`flex justify-between items-center mt-4 py-2 ${className}`}>
       <p className="text-white text-2xl">{name}</p>
@@ -22,4 +22,4 @@ const TeamStroke = ({index, name, location, busy, className, openModal, setSelec
   );
 };
 
-export default TeamStroke;
+export default TeamString;

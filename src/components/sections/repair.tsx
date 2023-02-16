@@ -1,5 +1,5 @@
 import { testRepairTeam } from "../../data/repairTeams";
-import TeamStroke from "../atoms/teamStroke";
+import TeamStroke from "../atoms/teamString";
 import { IRepair } from "../interfaces";
 
 const Repair = ({openModal, setSelectedTeam} : IRepair) => {
