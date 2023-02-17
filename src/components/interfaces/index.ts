@@ -35,3 +35,21 @@ export interface IPlasmaStatString {
     procent?: boolean,
     className?: string,
 }
+
+export interface IBatteryStatString {
+    name: string,
+    value: number,
+    color: string,
+    procent?: boolean,
+    minuts?: boolean,
+    className?: string,
+}
+
+export interface IBatteryCapasitorCol {
+    index: number,
+    firstVal: number,
+    firstColor: string,
+    secondVal: number,
+    secondColor: string,
+    className?: string,
+}
