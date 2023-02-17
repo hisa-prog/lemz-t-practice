@@ -9,9 +9,6 @@ module.exports = {
         'panel': "#176F7F",
         'overlay-gray': 'rgba(13, 12, 12, 0.8)',
       },
-      gridTemplateColumns: {
-        '22': 'repeat(22, minmax(0, 1fr))',
-      }
     },
   },
   plugins: [],
