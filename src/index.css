@@ -45,3 +45,16 @@ code {
     opacity: 0;
   }
 }
+
+.blinkAnimationBorder {
+  animation-name: blinkBorder;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blinkBorder {
+  50% {
+    border: 1px solid rgba(239, 68, 68)
+  }
+}
