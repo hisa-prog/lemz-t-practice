@@ -15,15 +15,17 @@ function App() {
       <SendTeamModal sendTeamModal={sendTeamModal} nameTeam={selectedTeam} />
       <div className="App__porthole"></div>
       <div className="App__main">
-        <div className="App_main-plasma panel-border">
-          <Plasma/>
-        </div>
-        <div className="App_main-repair panel-border">
-          <Repair openModal={() => sendTeamModal.open()} setSelectedTeam={setSelectedTeam}/>
+        <div className="App_main-leftSide">
+          <div className="App_main-leftSide__plasma panel-border">
+            <Plasma/>
+          </div>
+          <div className="App_main-leftSide__repair panel-border">
+            <Repair openModal={() => sendTeamModal.open()} setSelectedTeam={setSelectedTeam}/>
+          </div>
         </div>
         <div className="App_main-battery panel-border">
-          <Battery/>
-        </div>
+            <Battery/>
+          </div>
       </div>
     </div>
   );
