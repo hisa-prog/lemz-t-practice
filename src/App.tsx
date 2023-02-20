@@ -8,7 +8,7 @@ import Repair from "./components/sections/repair";
 
 function App() {
   const sendTeamModal = useModal();
-  const [selectedTeam, setSelectedTeam] = useState('')
+  const [selectedTeam, setSelectedTeam] = useState("");
 
   return (
     <div className="App">
@@ -17,15 +17,18 @@ function App() {
       <div className="App__main">
         <div className="App_main-leftSide">
           <div className="App_main-leftSide__plasma panel-border">
-            <Plasma/>
+            <Plasma />
           </div>
           <div className="App_main-leftSide__repair panel-border">
-            <Repair openModal={() => sendTeamModal.open()} setSelectedTeam={setSelectedTeam}/>
+            <Repair
+              openModal={() => sendTeamModal.open()}
+              setSelectedTeam={setSelectedTeam}
+            />
           </div>
         </div>
         <div className="App_main-battery panel-border">
-            <Battery/>
-          </div>
+          <Battery />
+        </div>
       </div>
     </div>
   );
