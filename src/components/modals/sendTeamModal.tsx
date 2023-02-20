@@ -17,12 +17,12 @@ const SendTeamModal = ({
                     <p className="text-white text-3xl w-full text-center">Choose a location</p>
                     <img src='/images/CloseIcon.svg' alt={"close"} className="cursor-pointer hover:opacity-50 w-5" onClick={(e) => { sendTeamModal.close() }} />
                 </div>
-                <div className="grid grid-cols-3 gap-2 mb-6">
+                <div className="grid grid-cols-2 gap-2 mb-6">
                     {locationsRepair.map((item, index) => (
                         <div 
                         key={index} 
                         className={`${index === selectedLocation ? 'border-white' : 'border-panel'}
-                        relative w-60 overflow-hidden border-2 rounded-lg
+                        relative w-96 overflow-hidden border-2 rounded-lg
                         hover:border-white active:border-white cursor-pointer`}
                         onClick={() => setSelectedLocation(index)}>
                             <img alt={item.name} src={item.img} className='h-full w-full'/>
