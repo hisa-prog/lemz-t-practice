@@ -1,6 +1,7 @@
 import { ITeamString } from "../interfaces";
 
 const TeamString = ({index, name, location, busy, className, openModal, setSelectedTeam}: ITeamString) => {
+
   return (
     <div key={index} className={`flex justify-between items-center mt-4 py-2 ${className}`}>
       <p className="text-white text-2xl">{name}</p>
@@ -14,7 +15,10 @@ const TeamString = ({index, name, location, busy, className, openModal, setSelec
       </p>
       <button 
         className="flex justify-center items-center p-2 text-white border-2 border-panel rounded-lg cursor-pointer hover:opacity-50"
-        onClick={busy ? () => {}  : openModal}
+        onClick={(e) => {
+          setSelectedTeam(name)
+          openModal(e)
+        }}
       >
         {busy ? "Revoke" : "Repair"}
       </button>
