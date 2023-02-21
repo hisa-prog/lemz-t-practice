@@ -46,10 +46,25 @@ export interface IBatteryStatString {
 }
 
 export interface IBatteryCapasitorCol {
-    index: number,
-    firstVal: number,
-    firstColor: string,
-    secondVal: number,
-    secondColor: string,
-    className?: string,
+  index: number;
+  firstVal: number;
+  firstColor: string;
+  secondVal: number;
+  secondColor: string;
+  className?: string;
+}
+
+export interface BatteryPackDto {
+  name: string;
+  is_on: boolean;
+  alarm: boolean;
+  durability: number;
+  charge_level: number;
+  capacitors: Array<{
+    name: string;
+    is_on: boolean;
+    durability: number;
+    charge_level: number;
+    rated_voltage: number;
+  }>;
 }
