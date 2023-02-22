@@ -1,48 +1,48 @@
 export interface ITeamString {
-    index: number,
-    name: string,
-    location: string,
-    busy: boolean,
-    openModal?: (arg:any) => void,
-    setSelectedTeam: (arg: any) => void,
-    className?: string,
+  index: number;
+  name: string;
+  location: string;
+  busy: boolean;
+  openModal?: (arg: any) => void;
+  setSelectedTeam: (arg: any) => void;
+  className?: string;
 }
 
 export interface IModal {
-    className?: string;
-    isOpen: boolean;
-    open: (arg0: string) => void;
-    close: () => void;
-    customClasses?: boolean;
-    children: any;
-    onSideClick?: () => void;
+  className?: string;
+  isOpen: boolean;
+  open: (arg0: string) => void;
+  close: () => void;
+  customClasses?: boolean;
+  children: any;
+  onSideClick?: () => void;
 }
 
 export interface IRepair {
-    openModal?: (arg:any) => void,
-    setSelectedTeam: (arg: any) => void,
+  openModal?: (arg: any) => void;
+  setSelectedTeam: (arg: any) => void;
 }
 
 export interface ISendTeamModal {
-    sendTeamModal: any;
-    nameTeam: string;
+  sendTeamModal: any;
+  nameTeam: string;
 }
 
 export interface IPlasmaStatString {
-    name: string,
-    value: number,
-    color: string,
-    procent?: boolean,
-    className?: string,
+  name: string;
+  value: number;
+  color: string;
+  procent?: boolean;
+  className?: string;
 }
 
 export interface IBatteryStatString {
-    name: string,
-    value: number,
-    color: string,
-    procent?: boolean,
-    minuts?: boolean,
-    className?: string,
+  name: string;
+  value: number;
+  color: string;
+  procent?: boolean;
+  minuts?: boolean;
+  className?: string;
 }
 
 export interface IBatteryCapasitorCol {
@@ -67,4 +67,16 @@ export interface BatteryPackDto {
     charge_level: number;
     rated_voltage: number;
   }>;
+}
+
+export interface PlasmaHeaterDto {
+  name: string;
+  is_on: boolean;
+  alarm: boolean;
+  durability: number;
+  temperature: number;
+  output_power_watt: number;
+  input_current: number;
+  input_voltage: number;
+  input_power: number;
 }
