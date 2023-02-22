@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useContext} from "react";
 import axios from "axios";
-import { IRepairTeamsDto } from "../interfaces";
+import { RepairTeamsDto } from "../interfaces";
 
 interface Props {
     children: any
 }
 
-const list: IRepairTeamsDto[] = []
+const list: RepairTeamsDto[] = []
 
 const RepairTeamsContext = React.createContext({
     teams: list,
-    setTeams: (arg: IRepairTeamsDto[]) => {},  
+    setTeams: (arg: RepairTeamsDto[]) => {},  
 });
 
 const RepairTeamsContextProvider = ({ children }: Props) => {
-    const [teams, setTeams] = useState<IRepairTeamsDto[]>([])
+    const [teams, setTeams] = useState<RepairTeamsDto[]>([])
 
     useEffect(() => {
         async function GetTeamsInfo() {
@@ -22,7 +22,7 @@ const RepairTeamsContextProvider = ({ children }: Props) => {
                 let response = await axios.get(process.env.REACT_APP_API + 'repair/teams')
                 if(response.status === 200) {
                     // console.log('teams',response)
-                    let tempArray: IRepairTeamsDto[] = []
+                    let tempArray: RepairTeamsDto[] = []
                     Object.entries(response.data).map((item : any, index) => {
                         tempArray.push({
                             name_team: item[0],

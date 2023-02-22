@@ -54,7 +54,7 @@ export interface IBatteryCapasitorCol {
   className?: string;
 }
 
-export interface IRepairTeamsDto {
+export interface RepairTeamsDto {
   name_team: string;
   is_busy: boolean;
   current_location: string;
