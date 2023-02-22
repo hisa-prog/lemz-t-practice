@@ -54,6 +54,21 @@ export interface IBatteryCapasitorCol {
   className?: string;
 }
 
+export interface BatteryPackDto {
+  name: string;
+  is_on: boolean;
+  alarm: boolean;
+  durability: number;
+  charge_level: number;
+  capacitors: Array<{
+    name: string;
+    is_on: boolean;
+    durability: number;
+    charge_level: number;
+    rated_voltage: number;
+  }>;
+}
+
 export interface PlasmaHeaterDto {
   name: string;
   is_on: boolean;
