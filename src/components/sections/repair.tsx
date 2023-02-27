@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { testRepairTeam } from "../../data/repairTeams";
 import TeamStroke from "../atoms/teamString";
-import { RepairTeamsContext } from "../context/repairTeams";
+import { RepairTeamsContext } from "../context/repairTeamsContext";
 import { IRepair } from "../interfaces";
 
-const Repair = ({ openModal, setSelectedTeam }: IRepair) => {
+const Repair = ({ openSendModal, openRevokeModal, setSelectedTeam }: IRepair) => {
   const { teams } = useContext(RepairTeamsContext);
   return (
     <div className="flex flex-col w-full h-fit">
@@ -17,7 +17,8 @@ const Repair = ({ openModal, setSelectedTeam }: IRepair) => {
               name={team.name_team}
               location={team.current_location}
               busy={team.is_busy}
-              openModal={openModal}
+              openSendModal={openSendModal}
+              openRevokeModal={openRevokeModal}
               setSelectedTeam={setSelectedTeam}
             />
           ))}
