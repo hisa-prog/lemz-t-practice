@@ -1,4 +1,4 @@
-import { IBatteryCapasitorCol } from "../interfaces";
+import { BatteryCapasitorColProps } from "../interfaces";
 
 const BatteryCapasitorCol = ({
   index,
@@ -7,7 +7,7 @@ const BatteryCapasitorCol = ({
   secondVal,
   secondColor,
   className,
-}: IBatteryCapasitorCol) => {
+}: BatteryCapasitorColProps) => {
   return (
     <div key={index} className={`${firstVal !== 100 ? 'blinkAnimationBorder' : ''} 
     relative flex flex-col items-center col-span-1 border border-panel rounded-lg p-1 ${className}`}>

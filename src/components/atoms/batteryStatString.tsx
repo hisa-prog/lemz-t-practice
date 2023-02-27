@@ -1,4 +1,4 @@
-import { IBatteryStatString } from "../interfaces";
+import { BatteryStatStringProps } from "../interfaces";
 
 const BatteryStatString = ({
   name,
@@ -7,7 +7,7 @@ const BatteryStatString = ({
   procent = false,
   minuts = false,
   className,
-}: IBatteryStatString) => {
+}: BatteryStatStringProps) => {
   return (
     <div className={`flex justify-between items-center ${className}`}>
       <p className="text-white text-2xl">{name}</p>

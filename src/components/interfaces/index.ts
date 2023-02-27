@@ -1,4 +1,4 @@
-export interface ITeamString {
+export interface TeamStringProps {
   index: number;
   name: string;
   location: string;
@@ -9,7 +9,7 @@ export interface ITeamString {
   className?: string;
 }
 
-export interface IModal {
+export interface ModalLayoutProps {
   className?: string;
   isOpen: boolean;
   open: (arg0: string) => void;
@@ -19,18 +19,18 @@ export interface IModal {
   onSideClick?: () => void;
 }
 
-export interface IRepair {
+export interface RepairProps {
   openSendModal: (arg: any) => void;
   openRevokeModal: (arg: any) => void;
   setSelectedTeam: (arg: any) => void;
 }
 
-export interface ISendTeamModal {
+export interface SendTeamModalProps {
   sendTeamModal: any;
   nameTeam: string;
 }
 
-export interface IPlasmaStatString {
+export interface PlasmaStatStringProps {
   name: string;
   value: number;
   color: string;
@@ -38,7 +38,7 @@ export interface IPlasmaStatString {
   className?: string;
 }
 
-export interface IBatteryStatString {
+export interface BatteryStatStringProps {
   name: string;
   value: number;
   color: string;
@@ -47,7 +47,7 @@ export interface IBatteryStatString {
   className?: string;
 }
 
-export interface IBatteryCapasitorCol {
+export interface BatteryCapasitorColProps {
   index: number;
   firstVal: number;
   firstColor: string;

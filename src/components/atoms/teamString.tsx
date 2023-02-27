@@ -1,4 +1,4 @@
-import { ITeamString } from "../interfaces";
+import { TeamStringProps } from "../interfaces";
 
 const TeamString = ({
   index,
@@ -9,7 +9,7 @@ const TeamString = ({
   openSendModal,
   openRevokeModal,
   setSelectedTeam,
-}: ITeamString) => {
+}: TeamStringProps) => {
 
   return (
     <div

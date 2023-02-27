@@ -1,4 +1,4 @@
-import { IPlasmaStatString } from "../interfaces";
+import { PlasmaStatStringProps } from "../interfaces";
 
 const PlasmaStatString = ({
   name,
@@ -6,7 +6,7 @@ const PlasmaStatString = ({
   color,
   procent = false,
   className,
-}: IPlasmaStatString) => {
+}: PlasmaStatStringProps) => {
   return (
     <div className={`flex justify-between items-center ${className}`}>
       <p className="text-white text-2xl">{name}</p>

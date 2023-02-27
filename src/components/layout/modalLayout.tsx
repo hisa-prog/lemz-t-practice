@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IModal } from "../interfaces";
+import { ModalLayoutProps } from "../interfaces";
 
 const ModalLayout = ({
     className,
@@ -8,7 +8,7 @@ const ModalLayout = ({
     children,
     customClasses = false,
     onSideClick,
-}: IModal) => {
+}: ModalLayoutProps) => {
     return (
         <div className={`w-screen h-screen z-10 fixed top-0 left-0 flex items-center justify-center  
         ${isOpen ? "bg-overlay-gray " : "hidden"} ${className}`} 

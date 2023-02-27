@@ -2,11 +2,11 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { BatteryPackContext } from "../context/batteryPackContext";
 import { PlasmaHeaterContext } from "../context/plasmaHeaterContext";
-import { ISendTeamModal } from "../interfaces";
+import { SendTeamModalProps } from "../interfaces";
 import ModalLayout, { useModal } from "../layout/modalLayout";
 import OperationStatusModal from "./operationStatusModal";
 
-const SendTeamModal = ({ sendTeamModal, nameTeam }: ISendTeamModal) => {
+const SendTeamModal = ({ sendTeamModal, nameTeam }: SendTeamModalProps) => {
   const [selectedLocation, setSelectedLocation] = useState(-1);
   const [operationStatus, setOperationStatus] = useState(false);
   const operationStatusModal = useModal();
