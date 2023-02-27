@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { testRepairTeam } from "../../data/repairTeams";
 import TeamStroke from "../atoms/teamString";
 import { RepairTeamsContext } from "../context/repairTeamsContext";
 import { RepairProps } from "../interfaces";
