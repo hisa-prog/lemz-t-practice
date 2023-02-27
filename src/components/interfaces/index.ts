@@ -3,7 +3,8 @@ export interface ITeamString {
   name: string;
   location: string;
   busy: boolean;
-  openModal?: (arg: any) => void;
+  openSendModal: (arg: any) => void;
+  openRevokeModal: (arg: any) => void;
   setSelectedTeam: (arg: any) => void;
   className?: string;
 }
@@ -19,7 +20,8 @@ export interface IModal {
 }
 
 export interface IRepair {
-  openModal?: (arg: any) => void;
+  openSendModal: (arg: any) => void;
+  openRevokeModal: (arg: any) => void;
   setSelectedTeam: (arg: any) => void;
 }
 
@@ -79,4 +81,21 @@ export interface PlasmaHeaterDto {
   input_current: number;
   input_voltage: number;
   input_power: number;
+}
+
+export interface RepairTeamsDto {
+  name_team: string;
+  is_busy: boolean;
+  current_location: string;
+}
+
+export interface OperationStatusModalProps {
+  operationStatusModal: any;
+  error?: boolean;
+  rootModalClose: (arg: any) => void;
+}
+
+export interface RevokeTeamModalProps {
+  revokeTeamModal: any;
+  nameTeam: string;
 }

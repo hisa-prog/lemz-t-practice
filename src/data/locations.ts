@@ -1,26 +1,12 @@
-export const locationsRepair : Array<{name: string, img: string}> = [
+export const locationsRepair : Array<{name: string, link: string,  img: string}> = [
     {
-        name: 'Battery Pack Capasitor 1',
-        img: 'images/locations/capasitor1.jpg',
-    },
-    {
-        name: 'Battery Pack Capasitor 2',
-        img: 'images/locations/capasitor2.jpg',
-    },
-    {
-        name: 'Battery Pack Capasitor 3',
-        img: 'images/locations/capasitor3.jpg',
-    },
-    {
-        name: 'Battery Pack Capasitor 4',
-        img: 'images/locations/capasitor4.jpg',
-    },
-    {
-        name: 'Battery Pack Capasitor 5',
-        img: 'images/locations/capasitor5.jpg',
+        name: 'Battery Pack Capasitor',
+        link: 'Capacitor-a3f74fd1-ede6-46ba-b8cf-34224d6a9c77',
+        img: 'images/locations/capasitor.jpg',
     },
     {
         name: 'Plasma Heater',
+        link: 'PlasmaHeater-cf7a7a8b-40ca-41b2-a3f2-f219f9b8d97f',
         img: 'images/locations/plasmaHeater.jpg',
     },
 ]

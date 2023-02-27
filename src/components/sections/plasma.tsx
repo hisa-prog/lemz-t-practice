@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import PlasmaStatStroke from "../atoms/plasmaStatString";
 import { PlasmaHeaterContext } from "../context/plasmaHeaterContext";
 import { DangerIcon } from "../icons/dangerIcon";
@@ -12,7 +12,6 @@ const Plasma = () => {
     if (plasmaHeaterInfoLoaded) {
       if (
         plasmaHeater.durability <= 35 ||
-        // data.output_power_watt <= 80 ||
         plasmaHeater.temperature >= 12000000 ||
         plasmaHeater.temperature <= 10000000 ||
         plasmaHeater.alarm
@@ -36,18 +35,6 @@ const Plasma = () => {
 
       {plasmaHeaterInfoLoaded ? (
         <>
-          {/* <PlasmaStatStroke
-            name={"power"}
-            value={data.output_power_watt}
-            color={
-              data.output_power_watt >= 85
-                ? "text-green-400"
-                : data.output_power_watt >= 80
-                ? "text-yellow-500"
-                : "text-red-500"
-            }
-            procent
-          /> */}
           <PlasmaStatStroke
             name={"durability"}
             value={plasmaHeater.durability}
