@@ -21,7 +21,7 @@ const RevokeTeamModal = ({
         }
       );
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response)
         setOperationStatus(false);
         operationStatusModal.open();
       } else {

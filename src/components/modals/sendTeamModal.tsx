@@ -1,38 +1,65 @@
 import axios from "axios";
-import { useState } from "react";
-import { locationsRepair } from "../../data/locations";
+import { useContext, useState } from "react";
+import { BatteryPackContext } from "../context/batteryPackContext";
+import { PlasmaHeaterContext } from "../context/plasmaHeaterContext";
 import { ISendTeamModal } from "../interfaces";
 import ModalLayout, { useModal } from "../layout/modalLayout";
 import OperationStatusModal from "./operationStatusModal";
 
 const SendTeamModal = ({ sendTeamModal, nameTeam }: ISendTeamModal) => {
   const [selectedLocation, setSelectedLocation] = useState(-1);
-  const [operationStatus, setOperationStatus] = useState(false)
+  const [operationStatus, setOperationStatus] = useState(false);
   const operationStatusModal = useModal();
+  const { batteryPack } = useContext(BatteryPackContext);
+  const { plasmaHeater } = useContext(PlasmaHeaterContext)
+
+  const [capasitorNumber, setCapasitorNumber] = useState(1);
+  const handleInputCapasitorNumber = (e: any) => {
+    setCapasitorNumber(e.target.value);
+  };
 
   const sendTeamOnLocation = async (team_name: string, location: string) => {
     try {
-      let response = await axios.post(process.env.REACT_APP_API + "repair/start", {
-        team_name: team_name,
-        location: location,
-      });
-      if(response.status === 200) {
-        console.log(response)
-        setOperationStatus(false)
-        operationStatusModal.open()
-      }
-      else {
-        setOperationStatus(true)
-        operationStatusModal.open()
+      let response = await axios.post(
+        process.env.REACT_APP_API + "repair/start",
+        {
+          team_name: team_name,
+          location: location,
+        }
+      );
+      if (response.status === 200) {
+        // console.log(response)
+        setOperationStatus(false);
+        operationStatusModal.open();
+      } else {
+        setOperationStatus(true);
+        operationStatusModal.open();
       }
     } catch (e: any) {
       console.log(e.message);
     }
   };
 
+  const locationsRepair: Array<{ name: string; link: string; img: string }> = [
+    {
+      name: "Battery Pack Capasitor",
+      link: batteryPack?.name,
+      img: "images/locations/capasitor.jpg",
+    },
+    {
+      name: "Plasma Heater",
+      link: plasmaHeater?.name,
+      img: "images/locations/plasmaHeater.jpg",
+    },
+  ];
+
   return (
     <ModalLayout {...sendTeamModal}>
-      <OperationStatusModal operationStatusModal={operationStatusModal} error={operationStatus} rootModalClose={() => sendTeamModal.close()}/>
+      <OperationStatusModal
+        operationStatusModal={operationStatusModal}
+        error={operationStatus}
+        rootModalClose={() => sendTeamModal.close()}
+      />
       <div className="panel-border bg-panel bg-opacity-30 md:w-max w-[343px] rounded-2xl p-8 font-roboto z-50">
         <div className="flex justify-between items-center mb-8 w-full">
           <p className="text-white text-3xl w-full text-center">
@@ -65,16 +92,46 @@ const SendTeamModal = ({ sendTeamModal, nameTeam }: ISendTeamModal) => {
             </div>
           ))}
         </div>
+        {selectedLocation === 0 && (
+          <div className="flex items-center justify-center my-4">
+            <p className="text-white text-3xl mr-4">Enter capacitor number:</p>
+            <input
+              value={capasitorNumber}
+              onChange={handleInputCapasitorNumber}
+              type="number"
+              placeholder={"1"}
+              min="1"
+              max="65"
+              className="rounded-lg bg-transparent outline-none ml-2 text-3xl text-white font-normal w-16"
+            />
+          </div>
+        )}
         <div className="flex justify-center w-full">
           <button
             className={`${
-              selectedLocation === -1
+              selectedLocation === -1 ||
+              capasitorNumber < 1 ||
+              capasitorNumber > 65
                 ? "opacity-20"
                 : "cursor-pointer hover:opacity-50 active:opacity-50"
             }
                     w-max py-2 px-6 rounded-xl text-xl text-white border-2 border-white`}
-            disabled={selectedLocation === -1}
-            onClick={() => sendTeamOnLocation(nameTeam, locationsRepair[selectedLocation].link)}
+            disabled={
+              selectedLocation === -1 ||
+              capasitorNumber < 1 ||
+              capasitorNumber > 65
+            }
+            onClick={() =>
+              selectedLocation === 0
+                ? sendTeamOnLocation(
+                    nameTeam,
+                    batteryPack.capacitors[capasitorNumber - 1].name
+                  )
+                : sendTeamOnLocation(
+                    nameTeam,
+                    locationsRepair[selectedLocation].link
+                  )
+            }
           >
             Send {nameTeam}
           </button>
