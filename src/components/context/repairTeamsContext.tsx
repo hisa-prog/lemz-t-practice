@@ -37,8 +37,8 @@ const RepairTeamsContextProvider = ({ children }: Props) => {
                 console.log(e.message)
             }
         }
-        GetTeamsInfo()
-        // setInterval(GetTeamsInfo, 2000)
+        // GetTeamsInfo()
+        setInterval(GetTeamsInfo, 1500)
       },[])
     
     return (
