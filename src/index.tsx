@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import BatteryPackContextProvider from "./components/context/batteryPackContext";
+import PlasmaHeaterContextProvider from "./components/context/plasmaHeaterContext";
 import RepairTeamsContextProvider from "./components/context/repairTeamsContext";
 
 const root = ReactDOM.createRoot(
@@ -11,7 +13,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <RepairTeamsContextProvider>
-      <App />
+    <BatteryPackContextProvider>
+      <PlasmaHeaterContextProvider>
+        <App />
+      </PlasmaHeaterContextProvider>
+    </BatteryPackContextProvider>
     </RepairTeamsContextProvider>
   </React.StrictMode>
 );
