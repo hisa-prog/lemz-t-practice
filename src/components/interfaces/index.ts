@@ -56,23 +56,6 @@ export interface IBatteryCapasitorCol {
   className?: string;
 }
 
-export interface RepairTeamsDto {
-  name_team: string;
-  is_busy: boolean;
-  current_location: string;
-}
-
-export interface OperationStatusModalProps {
-  operationStatusModal: any;
-  error?: boolean;
-  rootModalClose: (arg: any) => void;
-}
-
-export interface RevokeTeamModalProps {
-  revokeTeamModal: any;
-  nameTeam: string;
-}
-
 export interface BatteryPackDto {
   name: string;
   is_on: boolean;
@@ -98,4 +81,21 @@ export interface PlasmaHeaterDto {
   input_current: number;
   input_voltage: number;
   input_power: number;
+}
+
+export interface RepairTeamsDto {
+  name_team: string;
+  is_busy: boolean;
+  current_location: string;
+}
+
+export interface OperationStatusModalProps {
+  operationStatusModal: any;
+  error?: boolean;
+  rootModalClose: (arg: any) => void;
+}
+
+export interface RevokeTeamModalProps {
+  revokeTeamModal: any;
+  nameTeam: string;
 }

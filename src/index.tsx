@@ -13,11 +13,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <RepairTeamsContextProvider>
-    <BatteryPackContextProvider>
-      <PlasmaHeaterContextProvider>
-        <App />
-      </PlasmaHeaterContextProvider>
-    </BatteryPackContextProvider>
+      <BatteryPackContextProvider>
+        <PlasmaHeaterContextProvider>
+          <App />
+        </PlasmaHeaterContextProvider>
+      </BatteryPackContextProvider>
     </RepairTeamsContextProvider>
   </React.StrictMode>
 );
