@@ -19,11 +19,11 @@ const BatteryPackContext = React.createContext({
   batteryPack: temp,
   setBatteryPack: (arg: BatteryPackDto) => {},
   batteryInfoLoaded: false,
-  setBatteryInfoLoaded: (arg: boolean) => {}
+  setBatteryInfoLoaded: (arg: boolean) => {},
 });
 
 const BatteryPackContextProvider = ({ children }: Props) => {
-  const [batteryInfoLoaded, setBatteryInfoLoaded] = useState(false)
+  const [batteryInfoLoaded, setBatteryInfoLoaded] = useState(false);
   const [batteryPack, setBatteryPack] = useState<BatteryPackDto>({
     name: "",
     is_on: false,
@@ -33,20 +33,23 @@ const BatteryPackContextProvider = ({ children }: Props) => {
     capacitors: [],
   });
 
-  useEffect(() => {
-    async function GetBatteryPackInfo() {
-      try {
-        let response = await axios.get(process.env.REACT_APP_API + 'energy/state/alpha_cell/battery')
-        if (response.status === 200) {
-            setBatteryPack(response.data.alpha_cell.battery)
-            setBatteryInfoLoaded(true)
-        } else console.log("error")
-      } catch (e: any) {
-        console.log(e.message);
-      }
+  async function GetBatteryPackInfo() {
+    try {
+      await axios
+        .get(process.env.REACT_APP_API + "energy/state/alpha_cell/battery")
+        .then((response) => {
+          console.log(response);
+          setBatteryPack(response.data.alpha_cell.battery);
+          setBatteryInfoLoaded(true);
+        })
+        .catch((response) => {
+          console.log(response.detail[0].msg);
+        });
+    } catch (e: any) {
+      console.log(e.message);
     }
-    setInterval(GetBatteryPackInfo, 1500)
-  }, []);
+  }
+  setInterval(GetBatteryPackInfo, 1500);
 
   return (
     <BatteryPackContext.Provider
@@ -54,7 +57,7 @@ const BatteryPackContextProvider = ({ children }: Props) => {
         batteryPack,
         setBatteryPack,
         batteryInfoLoaded,
-        setBatteryInfoLoaded
+        setBatteryInfoLoaded,
       }}
     >
       {children}
