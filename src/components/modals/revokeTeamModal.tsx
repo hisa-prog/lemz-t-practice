@@ -13,21 +13,19 @@ const RevokeTeamModal = ({
 
   const revokeTeam = async (team_name: string) => {
     try {
-      let response = await axios.post(
-        process.env.REACT_APP_API + "repair/stop",
-        {
+      await axios
+        .post(process.env.REACT_APP_API + "repair/stop", {
           team_name: team_name,
           location: "HOME",
-        }
-      );
-      if (response.status === 200) {
-        // console.log(response)
-        setOperationStatus(false);
-        operationStatusModal.open();
-      } else {
-        setOperationStatus(true);
-        operationStatusModal.open();
-      }
+        })
+        .then(() => {
+          setOperationStatus(false);
+          operationStatusModal.open();
+        })
+        .catch(() => {
+          setOperationStatus(true);
+          operationStatusModal.open();
+        });
     } catch (e: any) {
       console.log(e.message);
     }

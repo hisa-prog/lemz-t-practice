@@ -11,7 +11,7 @@ const SendTeamModal = ({ sendTeamModal, nameTeam }: SendTeamModalProps) => {
   const [operationStatus, setOperationStatus] = useState(false);
   const operationStatusModal = useModal();
   const { batteryPack } = useContext(BatteryPackContext);
-  const { plasmaHeater } = useContext(PlasmaHeaterContext)
+  const { plasmaHeater } = useContext(PlasmaHeaterContext);
 
   const [capasitorNumber, setCapasitorNumber] = useState(1);
   const handleInputCapasitorNumber = (e: any) => {
@@ -20,21 +20,19 @@ const SendTeamModal = ({ sendTeamModal, nameTeam }: SendTeamModalProps) => {
 
   const sendTeamOnLocation = async (team_name: string, location: string) => {
     try {
-      let response = await axios.post(
-        process.env.REACT_APP_API + "repair/start",
-        {
+      await axios
+        .post(process.env.REACT_APP_API + "repair/start", {
           team_name: team_name,
           location: location,
-        }
-      );
-      if (response.status === 200) {
-        // console.log(response)
-        setOperationStatus(false);
-        operationStatusModal.open();
-      } else {
-        setOperationStatus(true);
-        operationStatusModal.open();
-      }
+        })
+        .then(() => {
+          setOperationStatus(false);
+          operationStatusModal.open();
+        })
+        .catch(() => {
+          setOperationStatus(true);
+          operationStatusModal.open();
+        });
     } catch (e: any) {
       console.log(e.message);
     }
