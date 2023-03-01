@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { BatteryPackDto } from "../interfaces";
 
@@ -38,7 +38,7 @@ const BatteryPackContextProvider = ({ children }: Props) => {
       await axios
         .get(process.env.REACT_APP_API + "energy/state/alpha_cell/battery")
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           setBatteryPack(response.data.alpha_cell.battery);
           setBatteryInfoLoaded(true);
         })
