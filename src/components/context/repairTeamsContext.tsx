@@ -21,7 +21,7 @@ const RepairTeamsContextProvider = ({ children }: Props) => {
       await axios
         .get(process.env.REACT_APP_API + "repair/teams")
         .then((response) => {
-          console.log("teams", response);
+        //   console.log("teams", response);
           let tempArray: RepairTeamsDto[] = [];
           Object.entries(response.data).map((item: any, index) => {
             tempArray.push({
