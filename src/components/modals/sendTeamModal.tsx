@@ -44,12 +44,12 @@ const SendTeamModal = ({ sendTeamModal, nameTeam }: SendTeamModalProps) => {
     {
       name: "Battery Pack Capasitor",
       link: batteryPack?.name,
-      img: "images/locations/capasitor.jpg",
+      img: "/images/locations/capasitor.jpg",
     },
     {
       name: "Plasma Heater",
       link: plasmaHeater?.name,
-      img: "images/locations/plasmaHeater.jpg",
+      img: "/images/locations/plasmaHeater.jpg",
     },
   ];
 
