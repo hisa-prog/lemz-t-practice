@@ -3,7 +3,11 @@ import TeamStroke from "../atoms/teamString";
 import { RepairTeamsContext } from "../context/repairTeamsContext";
 import { RepairProps } from "../interfaces";
 
-const Repair = ({ openSendModal, openRevokeModal, setSelectedTeam }: RepairProps) => {
+const Repair = ({
+  openSendModal,
+  openRevokeModal,
+  setSelectedTeam,
+}: RepairProps) => {
   const { teams } = useContext(RepairTeamsContext);
   return (
     <div className="flex flex-col w-full h-fit">
@@ -11,15 +15,17 @@ const Repair = ({ openSendModal, openRevokeModal, setSelectedTeam }: RepairProps
       {teams.length != 0 ? (
         <>
           {teams.map((team, index) => (
-            <TeamStroke
-              index={index}
-              name={team.name_team}
-              location={team.current_location}
-              busy={team.is_busy}
-              openSendModal={openSendModal}
-              openRevokeModal={openRevokeModal}
-              setSelectedTeam={setSelectedTeam}
-            />
+            <div key={index}>
+              <TeamStroke
+                index={index}
+                name={team.name_team}
+                location={team.current_location}
+                busy={team.is_busy}
+                openSendModal={openSendModal}
+                openRevokeModal={openRevokeModal}
+                setSelectedTeam={setSelectedTeam}
+              />
+            </div>
           ))}
         </>
       ) : (
