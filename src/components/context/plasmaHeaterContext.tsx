@@ -56,7 +56,7 @@ const PlasmaHeaterContextProvider = ({ children }: Props) => {
       console.log(e.message);
     }
   }
-  setInterval(GetPlasmaHeaterInfo, 1500);
+  setInterval(GetPlasmaHeaterInfo, 2000);
 
   return (
     <PlasmaHeaterContext.Provider

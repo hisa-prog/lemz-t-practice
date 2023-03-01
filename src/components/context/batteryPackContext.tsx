@@ -49,7 +49,7 @@ const BatteryPackContextProvider = ({ children }: Props) => {
       console.log(e.message);
     }
   }
-  setInterval(GetBatteryPackInfo, 1500);
+  setInterval(GetBatteryPackInfo, 2000);
 
   return (
     <BatteryPackContext.Provider
