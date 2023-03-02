@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BatteryPackDto } from "../interfaces";
 
@@ -49,8 +49,10 @@ const BatteryPackContextProvider = ({ children }: Props) => {
       console.log(e.message);
     }
   }
-  GetBatteryPackInfo()
-  // setInterval(GetBatteryPackInfo, 2000);
+
+  useEffect(() => {
+    setInterval(GetBatteryPackInfo, 2000);
+  },[])
 
   return (
     <BatteryPackContext.Provider

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { RepairTeamsDto } from "../interfaces";
 
@@ -39,8 +39,9 @@ const RepairTeamsContextProvider = ({ children }: Props) => {
       console.log(e.message);
     }
   }
-  GetTeamsInfo()
-//   setInterval(GetTeamsInfo, 2000);
+  useEffect(() => {
+    setInterval(GetTeamsInfo, 2000);
+  },[])
 
   return (
     <RepairTeamsContext.Provider

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { PlasmaHeaterDto } from "../interfaces";
 
@@ -56,8 +56,9 @@ const PlasmaHeaterContextProvider = ({ children }: Props) => {
       console.log(e.message);
     }
   }
-  GetPlasmaHeaterInfo()
-  // setInterval(GetPlasmaHeaterInfo, 2000);
+  useEffect(() => {
+    setInterval(GetPlasmaHeaterInfo, 2000);
+  },[])
 
   return (
     <PlasmaHeaterContext.Provider
