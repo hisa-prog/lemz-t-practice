@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { PlasmaHeaterDto } from "../interfaces";
 
@@ -39,22 +39,25 @@ const PlasmaHeaterContextProvider = ({ children }: Props) => {
     input_power: 0,
   });
 
-  useEffect(() => {
-    async function GetPlasmaHeaterInfo() {
-      try {
-        let response = await axios.get(
-          process.env.REACT_APP_API + "energy/state/alpha_cell/plasma_heater"
-        );
-        if (response.status === 200) {
-          setPlasmaHeater(response.data.alpha_cell.plasma_heater)
-          setPlasmaHeaterInfoLoaded(true)
-        } else console.log("error");
-      } catch (e: any) {
-        console.log(e.message);
-      }
+  async function GetPlasmaHeaterInfo() {
+    try {
+      await axios.get(
+        process.env.REACT_APP_API + "energy/state/alpha_cell/plasma_heater"
+      )
+      .then((response) => {
+        // console.log(response)
+        setPlasmaHeater(response.data.alpha_cell.plasma_heater);
+        setPlasmaHeaterInfoLoaded(true);
+      })
+      .catch((response) => {
+        console.log(response.detail[0].msg)
+      })
+    } catch (e: any) {
+      console.log(e.message);
     }
-    setInterval(GetPlasmaHeaterInfo, 1500);
-  }, []);
+  }
+  GetPlasmaHeaterInfo()
+  // setInterval(GetPlasmaHeaterInfo, 2000);
 
   return (
     <PlasmaHeaterContext.Provider

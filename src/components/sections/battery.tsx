@@ -76,21 +76,23 @@ const Battery = () => {
           />
           <div className="grid grid-cols-8 gap-1.5 mt-4">
             {batteryPack.capacitors.map((item, index) => (
-              <BatteryCapasitorCol
-                index={index}
-                firstVal={item.durability}
-                firstColor={
-                  item.durability === 100 ? "text-green-400" : "text-red-500"
-                }
-                secondVal={item.charge_level}
-                secondColor={
-                  item.charge_level >= 99.5
-                    ? "text-green-400"
-                    : item.charge_level >= 35
-                    ? "text-yellow-500"
-                    : "text-red-500"
-                }
-              />
+              <div className="col-span-1" key={index}>
+                <BatteryCapasitorCol
+                  index={index}
+                  firstVal={item.durability}
+                  firstColor={
+                    item.durability === 100 ? "text-green-400" : "text-red-500"
+                  }
+                  secondVal={item.charge_level}
+                  secondColor={
+                    item.charge_level >= 99.5
+                      ? "text-green-400"
+                      : item.charge_level >= 35
+                      ? "text-yellow-500"
+                      : "text-red-500"
+                  }
+                />
+              </div>
             ))}
           </div>
         </>
