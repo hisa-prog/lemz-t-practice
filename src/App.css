@@ -56,6 +56,15 @@
   padding: 16px;
 }
 
+.App_main-events {
+  display: flex;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  height: fit-content;
+  margin: 16px;
+  padding: 16px;
+}
+
 .panel-border {
   border-image-source: url('../public/images/panel-type.png');
   border-image-slice: 10 fill;
@@ -65,4 +74,13 @@
   border-style: solid;
   border-color: transparent;
   backdrop-filter: blur(10px)
+}
+
+.hideScrollbar {
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
 }
