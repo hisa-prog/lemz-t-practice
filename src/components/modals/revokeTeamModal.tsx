@@ -14,9 +14,9 @@ const RevokeTeamModal = ({
   const revokeTeam = async (team_name: string) => {
     try {
       await axios
-        .post(process.env.REACT_APP_API + "repair/stop", {
-          team_name: team_name,
-          location: "HOME",
+        .post(process.env.REACT_APP_API + "repair/stop/" + `${team_name}`, {
+          // team_name: team_name,
+          // location: "HOME",
         })
         .then(() => {
           setOperationStatus(false);

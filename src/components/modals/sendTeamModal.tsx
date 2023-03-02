@@ -23,6 +23,7 @@ const SendTeamModal = ({ sendTeamModal, nameTeam }: SendTeamModalProps) => {
       await axios
         .post(process.env.REACT_APP_API + "repair/start", {
           team_name: team_name,
+          cell_name: 'alpha_cell',
           location: location,
         })
         .then(() => {
