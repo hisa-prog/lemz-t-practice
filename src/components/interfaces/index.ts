@@ -99,3 +99,10 @@ export interface RevokeTeamModalProps {
   revokeTeamModal: any;
   nameTeam: string;
 }
+
+export interface TextHideElProps {
+  text: string;
+  duration: string;
+  timeStart: string;
+  index: number;
+}
