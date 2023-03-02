@@ -4,6 +4,7 @@ import { useModal } from "./components/layout/modalLayout";
 import RevokeTeamModal from "./components/modals/revokeTeamModal";
 import SendTeamModal from "./components/modals/sendTeamModal";
 import Battery from "./components/sections/battery";
+import Events from "./components/sections/events";
 import Plasma from "./components/sections/plasma";
 import Repair from "./components/sections/repair";
 
@@ -32,6 +33,9 @@ function App() {
         </div>
         <div className="App_main-battery panel-border">
           <Battery />
+        </div>
+        <div className="App_main-events panel-border">
+          <Events />
         </div>
       </div>
     </div>
